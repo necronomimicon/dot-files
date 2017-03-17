@@ -8,7 +8,7 @@ call pathogen#helptags()
 syntax on                         " show syntax highlighting
 filetype plugin indent on
 if has('gui_running')
-set guifont=Monospace\ 12         " set monospace default font size 16pt
+set guifont=Monospace\ 12         " set monospace default font size 12pt
 endif
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
