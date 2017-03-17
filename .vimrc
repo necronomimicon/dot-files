@@ -7,12 +7,15 @@ call pathogen#helptags()
 
 syntax on                         " show syntax highlighting
 filetype plugin indent on
+if has('gui_running')
+set guifont=Monospace\ 12         " set monospace default font size 16pt
+endif
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
-set expandtab                     " use spaces, not tab characters
+"set expandtab                      use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
-set relativenumber                " show relative line numbers
+set nu 	                          " show line numbers
 set showmatch                     " show bracket matches
 set ignorecase                    " ignore case in search
 set hlsearch                      " highlight all search matches
