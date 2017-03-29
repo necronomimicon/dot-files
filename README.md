@@ -1,2 +1,4 @@
 # dot-files
-vim custom configuration file
+gvim custom configuration file.
+
+Place it in computer/root/user/.gvimrc (show hidden files)
