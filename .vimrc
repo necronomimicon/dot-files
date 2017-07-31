@@ -35,7 +35,7 @@ set wildmode=list:longest,full
 runtime macros/matchit.vim	" use % to jump between start/end of methods
 
 " highlight the status bar when in insert mode
-if version >= 700
+if version >= 700 
   au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
