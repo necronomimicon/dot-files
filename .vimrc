@@ -9,6 +9,9 @@ let g:enable_bold_font = 1
 " place it in vim80/colors
 colorscheme vim-material
 
+" make my default window bigger
+set lines=40 columns=120
+
 " show syntax highlighting
 syntax on
 filetype plugin indent on
