@@ -12,6 +12,9 @@ colorscheme vim-material
 " make my default window bigger
 set lines=40 columns=120
 
+" enable backspace usual behaviour
+set backspace=indent,eol,start
+
 " show syntax highlighting
 syntax on
 filetype plugin indent on
