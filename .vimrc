@@ -11,7 +11,7 @@ syntax on			" show syntax highlighting
 filetype plugin indent on
 
 if has('gui_running')
-set guifont=consolas\ 12 	" set font size 12px -CONSOLAS WINDOWS ONLY-FONT-
+set guifont=Consolas:h12:cANSI 	" set font size 12px
 endif
 
 set autoindent			" set auto indent
