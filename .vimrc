@@ -9,12 +9,14 @@ colorscheme vim-material	"  https://github.com/hzchirs/vim-material
 
 syntax on			" show syntax highlighting
 filetype plugin indent on
+
 if has('gui_running')
 set guifont=consolas\ 14 	" set font size 14px -CONSOLAS WINDOWS ONLY-FONT-
 endif
+
 set autoindent			" set auto indent
-set ts=4			" set indent to 4 spaces
-set shiftwidth=4
+set tabstop=4       " set a tab to 4 spaces
+
 set nocompatible		" don't need to be compatible with old vim
 set nu				" show line numbers
 set showmatch			" show bracket matches
