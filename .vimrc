@@ -14,7 +14,7 @@ filetype plugin indent on
 
 " custom font
 if has('gui_running')
-set guifont=Consolas:h13:cANSI 	" set font size 12px
+set guifont=Consolas:h13:cANSI 	" set font size 13px
 endif
 
 " set auto indent, smarttab at new line, tabs = 4 spaces
@@ -46,7 +46,7 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
 
-set nocompatible			" don't need to be compatible with old vim
+set nocompatible		" don't need to be compatible with old vim
 set nu						" show line numbers
 set showmatch				" show bracket matches
 set ignorecase				" ignore case in search
