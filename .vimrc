@@ -6,6 +6,7 @@ let g:enable_bold_font = 1
 
 " set dark background and color scheme
 " https://github.com/hzchirs/vim-material
+" place it in vim80/colors
 colorscheme vim-material
 
 " show syntax highlighting
@@ -45,6 +46,10 @@ if version >= 700
   au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
+
+" saves file backups in USER/vimTemp (must be manually created)
+set backupdir=~/vimTemp,.
+set directory=~/vimTemp,.
 
 set nocompatible			" don't need to be compatible with old vim
 set nu						" show line numbers
