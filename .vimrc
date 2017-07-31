@@ -6,7 +6,7 @@ let g:enable_bold_font = 1
 
 " set dark background and color scheme
 " https://github.com/hzchirs/vim-material
-colorscheme vim-material	
+colorscheme vim-material
 
 " show syntax highlighting
 syntax on
@@ -18,7 +18,7 @@ set guifont=Consolas:h13:cANSI 	" set font size 13px
 endif
 
 " set auto indent, smarttab at new line, tabs = 4 spaces
-set autoindent			
+set autoindent
 set smarttab
 set shiftwidth=4
 set tabstop=4
@@ -46,7 +46,7 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
 
-set nocompatible		" don't need to be compatible with old vim
+set nocompatible			" don't need to be compatible with old vim
 set nu						" show line numbers
 set showmatch				" show bracket matches
 set ignorecase				" ignore case in search
@@ -63,3 +63,4 @@ set clipboard=unnamed		" use the system clipboard
 set wildmenu				" enable bash style tab completion
 set wildmode=list:longest,full
 runtime macros/matchit.vim	" use % to jump between start/end of methods
+
