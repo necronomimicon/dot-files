@@ -5,7 +5,7 @@ set encoding=utf-8
 let g:enable_bold_font = 1
 
 " set dark background and color scheme
-colorscheme vim-material
+colorscheme vim-material			"  https://github.com/hzchirs/vim-material
 
 syntax on			" show syntax highlighting
 filetype plugin indent on
