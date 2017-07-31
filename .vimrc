@@ -51,10 +51,11 @@ if version >= 700
 endif
 
 " saves file backups in USER/vimTemp (must be manually created)
+set directory=~/vimTemp,.
+set backupdir=~/vimTemp,.
 set backup
 set writebackup
-set backupdir=~/vimTemp,.
-set directory=~/vimTemp,.
+au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S") . '.vimbackup'
 
 set nocompatible			" don't need to be compatible with old vim
 set nu						" show line numbers
