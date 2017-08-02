@@ -3,7 +3,7 @@
 " enable bold code in editor
 let g:enable_bold_font = 1
 
-" set color scheme from defaults
+" set dark color scheme from defaults
 colorscheme evening
 
 " default window bigger
@@ -67,25 +67,25 @@ nnoremap k gk
 nmap, c :!open -a Google\ Chrome<cr>
 
 " general oneliners
-set nocompatible			" don't need to be compatible with old vim
-set nu						" show line numbers
-set showmode      " always show what mode you're on
-set nowrap        " don't wrap lines
-set showmatch				" show bracket matches
-set ignorecase				" ignore case in search
-set hlsearch				" highlight all search matches
-set cursorline				" highlight current line
-set smartcase				" pay attention to case when caps are used
-set incsearch				" show search results as I type
-set ttimeoutlen=100			" decrease timeout for faster insert with 'O'
-set visualbell    "don't beep
-set noerrorbells	" don't beep
-set autowrite     " save on buffer switch
-set ruler					" show row and column in footer
-set scrolloff=2				" minimum lines above/below cursor
-set laststatus=2			" always show status bar
-set clipboard=unnamed		" use the system clipboard
-set wildmenu				" enable bash style tab completion
-set mouse=a					" enable full mouse support
+set nocompatible                " don't need to be compatible with old vim
+set nu                          " show line numbers
+set showmode                    " always show what mode you're on
+set nowrap                      " don't wrap lines
+set showmatch                   " show bracket matches
+set ignorecase				          " ignore case in search
+set hlsearch                    " highlight all search matches
+set cursorline                  " highlight current line
+set smartcase                   " pay attention to case when caps are used
+set incsearch                   " show search results as I type
+set ttimeoutlen=100             " decrease timeout for faster insert with 'O'
+set visualbell                  " don't beep
+set noerrorbells                " don't beep
+set autowrite                   " save on buffer switch
+set ruler                       " show row and column in footer
+set scrolloff=2                 " minimum lines above/below cursor
+set laststatus=2                " always show status bar
+set clipboard=unnamed           " use the system clipboard
+set wildmenu                    " enable bash style tab completion
+set mouse=a                     " enable full mouse support
 set wildmode=list:longest,full
-runtime macros/matchit.vim	" use % to jump between start/end of methods
+runtime macros/matchit.vim      " use % to jump between start/end of methods
