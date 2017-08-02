@@ -23,11 +23,11 @@ endif
 
 " indents
 set smarttab
-set autoindent      " autoindent always on
-set shiftwidth=4    " number of spaces to use for auto-indent
-set tabstop=4       " a tab is 4-spaces width
-set softtapstop=4   " <bs> pretend a <tab> is removed, even if not
-set copyindent      " copy the previous indentation on autoindent
+set autoindent                  " autoindent always on
+set shiftwidth=4                " number of spaces to use for auto-indent
+set tabstop=4                   " a tab is 4-spaces width
+set softtapstop=4               " <bs> pretend a <tab> is removed, even if not
+set copyindent                  " copy the previous indentation on autoindent
 
 " highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
