@@ -72,7 +72,7 @@ set nu                          " show line numbers
 set showmode                    " always show what mode you're on
 set nowrap                      " don't wrap lines
 set showmatch                   " show bracket matches
-set ignorecase				          " ignore case in search
+set ignorecase                  " ignore case in search
 set hlsearch                    " highlight all search matches
 set cursorline                  " highlight current line
 set smartcase                   " pay attention to case when caps are used
