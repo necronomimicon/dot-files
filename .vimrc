@@ -1,4 +1,18 @@
-" .vimrc V3.141_OOOQConfig
+" .vimrc OOOQ3.1415
+
+" PERSONAL SPECIFIC
+" inverts insert a & i
+nnoremap a i
+nnoremap i a
+
+" inverts up and down
+nnoremap j k
+nnoremap k j
+
+" inverts r key modes
+nnoremap r R
+nnoremap R r
+" PERSONAL SPECIFIC END
 
 " enable bold code in editor
 let g:enable_bold_font = 1
@@ -59,12 +73,14 @@ set backup
 set writebackup
 au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S") . '.vimbackup'
 
-" normal cursor movement
-nnoremap j gj
-nnoremap k gk
-
 " load the buffer into chrome
 nmap, c :!open -a Google\ Chrome<cr>
+
+" preserve pageUp & pageDown beha. & cursor position
+map <silent> <PageUp> 9001<C-U>
+map <silent> <PageDown> 9001<C-D>
+imap <silent> <PageUp> <C-O>9001<C-U>
+imap <silent> <PageDown> <C-O>9001<C-D>
 
 " general oneliners
 set nocompatible                " don't need to be compatible with old vim
