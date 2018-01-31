@@ -5,9 +5,12 @@
 nnoremap a i
 nnoremap i a
 
+" cursors doesn't print letters
+set nocompatible
+
 " inverts up and down
-nnoremap j k
-nnoremap k j
+" nnoremap j k
+" nnoremap k j
 
 " inverts r key modes
 nnoremap r R
