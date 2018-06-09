@@ -42,7 +42,7 @@ endif
 set smarttab
 set autoindent                  " autoindent always on
 set shiftwidth=4                " number of spaces to use for auto-indent
-set tabstop=4                   " a tab is 4-spaces width
+set tabstop=2                   " a tab is 2-spaces width
 set softtabstop=4               " <bs> pretend a <tab> is removed, even if not
 set copyindent                  " copy the previous indentation on autoindent
 
