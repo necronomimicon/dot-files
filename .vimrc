@@ -33,9 +33,15 @@ set backspace=indent,eol,start
 syntax on
 filetype plugin indent on
 
-" font size set to 13px
-if has('gui_running')
-set guifont=Monospace\ 13
+" fonts set
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
 endif
 
 " indents
