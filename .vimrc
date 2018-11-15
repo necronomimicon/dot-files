@@ -21,7 +21,7 @@ nnoremap R r
 let g:enable_bold_font = 1
 
 " set dark color scheme from defaults
-colorscheme slate
+colorscheme desert
 
 " default window bigger
 set lines=45 columns=100
