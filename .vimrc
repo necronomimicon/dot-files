@@ -92,6 +92,7 @@ imap <silent> <PageUp> <C-O>9001<C-U>
 imap <silent> <PageDown> <C-O>9001<C-D>
 
 " general oneliners
+set encoding=utf-8
 set nocompatible                " don't need to be compatible with old vim
 set nu                          " show line numbers
 set showmode                    " always show what mode you're on
