@@ -9,8 +9,8 @@ nnoremap i a
 set nocompatible
 
 " inverts up and down
-" nnoremap j k
-" nnoremap k j
+nnoremap j k
+nnoremap k j
 
 " inverts r key modes
 nnoremap r R
