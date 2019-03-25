@@ -1,4 +1,4 @@
-" .vimrc OOOQ3.1415
+" .init OOOQ3.1
 
 " PERSONAL SPECIFIC
 " inverts insert a & i
@@ -115,3 +115,26 @@ set wildmenu                    " enable bash style tab completion
 set mouse=a                     " enable full mouse support
 set wildmode=list:longest,full
 runtime macros/matchit.vim      " use % to jump between start/end of methods
+
+//////////////////////
+
+call plug#begin('~/.config/nvim/bundle')
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airliner'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
+" call Pluginstall to install new plugins
+call plug#end
+
+" basics
+set incsearch
+
+" preferences
+noremap Y y$
