@@ -1,2 +1,2 @@
 # dot-files
-vim custom configuration file
+vim & neovim custom configuration file
