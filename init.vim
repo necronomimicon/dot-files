@@ -1,112 +1,145 @@
-" Setup NeoBundle --------------------{{{
-" If vundle is not installed, do it first
+" Specify a directory for plugins
+" - For Neovim: ~/.nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.nvim/plugged')
 
- let bundleExists = 1
- if (!isdirectory(expand("$HOME/.nvim/bundle/neobundle.vim")))
-  call system(expand("mkdir -p $HOME/.nvim/bundle"))
-  call system(expand("git clone https://github.com/Shougo/neobundle.vim ~/.nvim/bundle/neobundle.vim"))
-  let bundleExists = 0
- endif
+" MAKE SURE YOU USE SINGLE QUOTES
 
- if 0 | endif
+" vim-airline statusbar
+Plug 'vim-airline/vim-airline'
 
- if has('vim_starting')
-  if &compatible
-   " Be iMproved
-   set nocompatible
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Initialize plugin system
+call plug#end()
+
+" """"""""""""""""""""""""
+" init.vim OOOQ3.14
+
+" PERSONAL SPECIFIC
+" inverts insert a & i
+nnoremap a i
+nnoremap i a
+
+" cursors doesn't print letters
+set nocompatible
+
+" inverts up and down
+nnoremap j k
+nnoremap k j
+
+" inverts r key modes
+nnoremap r R
+nnoremap R r
+" PERSONAL SPECIFIC END
+
+" enable bold code in editor
+let g:enable_bold_font = 1
+
+" set dark color scheme from defaults
+colorscheme desert
+
+" default window bigger
+set lines=96 columns=164
+
+" enable backspace usual behaviour
+set backspace=indent,eol,start
+
+" show syntax highlighting
+syntax on
+filetype plugin indent on
+
+" fonts set
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
   endif
+endif
 
-" Required:
-  set runtimepath+=~/.nvim/bundle/neobundle.vim/
-  set runtimepath+=~/.nvim/bundle/bolt.vim/
- endif
+" indents
+set smarttab
+set autoindent                  " autoindent always on
+set shiftwidth=4                " number of spaces to use for auto-indent
+set tabstop=2                   " a tab is 2-spaces width
+set softtabstop=4               " <bs> pretend a <tab> is removed, even if not
+set copyindent                  " copy the previous indentation on autoindent
 
-" Required
- call neobundle#begin(expand('~/.nvim/bundle/'))
+" highlight trailing spaces in annoying red
+highlight ExtraWhitespace ctermbg=1 guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
-" Let NeoBundle manage NeoBundle
-" Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
+" mark the 80th column
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
 
-" syntax
- NeoBundle 'vim-css3-syntax'
- NeoBundle 'vim-scripts/SyntaxComplete'
+" unmap F1 help
+nmap <F1> <nop>
+imap <F1> <nop>
 
-" colorscheme & syntax highlighting
- NeoBundle 'mhartington/oceanic-next'
- NeoBundle 'Yggdroot/indentLine'
- NeoBundle 'Raimondi/delimitMate'
- NeoBundle 'valloric/MatchTagAlways'
+" highlight the status bar when in insert mode
+if version >= 700
+  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
+endif
 
-" git helpers
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'airblade/vim-gitgutter'
- NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+" saves file backups with "filename-date.vimbackup"
+set directory=~/vimTemp,.
+set backupdir=~/vimTemp,.
+set backup
+set writebackup
+au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S") . '.vimbackup'
 
-" untils
- NeoBundle 'benekastah/neomake'
- NeoBundle 'editorconfig/editorconfig-vim'
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'bling/vim-airline'
- NeoBundle 'tpope/vim-surround'
- NeoBundle 'mattn/emmet-vim'
+" load the buffer into chrome
+nmap, c :!open -a Google\ Chrome<cr>
 
- NeoBundle 'Shougo/deoplete.nvim'
- NeoBundle 'Shougo/neco-vim'
- NeoBundle 'Shougo/neoinclude.nvim'
+" preserve pageUp & pageDown beha. & cursor position
+map <silent> <PageUp> 9001<C-U>
+map <silent> <PageDown> 9001<C-D>
+imap <silent> <PageUp> <C-O>9001<C-U>
+imap <silent> <PageDown> <C-O>9001<C-D>
 
- NeoBundle 'Shougo/neosnippet.nvim'
- NeoBundle 'Shougo/neosnippet-snippets'
- NeoBundle 'honza/vim-snippets'
+" general oneliners
+set encoding=utf-8
+set nocompatible                " don't need to be compatible with old vim
+set nu                          " show line numbers
+set showmode                    " always show what mode you're on
+set nowrap                      " don't wrap lines
+set showmatch                   " show bracket matches
+set ignorecase                  " ignore case in search
+set hlsearch                    " highlight all search matches
+set cursorline                  " highlight current line
+set smartcase                   " pay attention to case when caps are used
+set incsearch                   " show search results as I type
+set ttimeoutlen=100             " decrease timeout for faster insert with 'O'
+set visualbell                  " don't beep
+set noerrorbells                " don't beep
+set autowrite                   " save on buffer switch
+set ruler                       " show row and column in footer
+set scrolloff=2                 " minimum lines above/below cursor
+set laststatus=2                " always show status bar
+set clipboard=unnamed           " use the system clipboard
+set wildmenu                    " enable bash style tab completion
+set mouse=a                     " enable full mouse support
+set wildmode=list:longest,full
+runtime macros/matchit.vim      " use % to jump between start/end of methods
 
-" because fuck it, icons are awesome
- NeoBundle 'ryanoasis/vim-devicons'
- NeoBundle 'terryma/vim-multiple-cursors'
- call neobundle#end()
-
-" Required:
-  filetype plugin indent on
-  NeoBundleCheck
-  if bundleExists == 0
-   echo "installing bundles, ignore errors"
-  endif
-
-" }}}
-
-" System Settings --------------------{{{
-" Neovim Settings
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  set clipboard+=unnamedplus
-
-" currently needed for neovim paste issue
-  set pastetoggle=<f6>
-
-" let airline tell me my status
-  set noshowmode
-  set noswapfile
-  filetype on
-  set tabstop=2 shiftwidth=2 expandtab
-  set conceallevel=0
-
-" block select not limited by shortest line
-  set virtualedit=
-  set wildmenu
-  set laststatus=2
-
-" set colorcolumn=100
-  set wrap linebreak nolist
-  set wildmode=full
-
-" remember cursor position between vim sessions
-  autocmd BufReadPost *
-    \ if line ("'\'") > 0 && line ("'\'") <= line("$") |
-    \  exe "normal! g'\"" |
-    \ endif
-    " center buffer around cursor when opening files
-  autocmd BufRead * normal zz
-"}}}
-
-" System mappings --------------------{{{
-" no need for ex mode
-  nnoremap Q <nop>
-
+-qwindowgeometry 1920x100
