@@ -1,9 +1,10 @@
+" """"""""""""""""""""""""
+" init.vim
+
 " Specify a directory for plugins
 " - For Neovim: ~/.nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.nvim/plugged')
-
-" MAKE SURE YOU USE SINGLE QUOTES
 
 " vim-airline statusbar
 Plug 'vim-airline/vim-airline'
@@ -14,7 +15,7 @@ Plug 'junegunn/vim-easy-align'
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-" On-demand loading
+" On-demand loading of NerdTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Git checker
@@ -24,24 +25,24 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " """"""""""""""""""""""""
-" init.vim OOOQ3.14
+" coming from vimrc
 
-" PERSONAL SPECIFIC
-" inverts insert a & i
-nnoremap a i
-nnoremap i a
-
-" cursors doesn't print letters
-set nocompatible
-
+" START PERSONAL SPECIFIC START """"""""""""""""""""""""
 " inverts up and down
 nnoremap j k
 nnoremap k j
 
+" inverts insert a & i
+nnoremap a i
+nnoremap i a
+
 " inverts r key modes
 nnoremap r R
 nnoremap R r
-" PERSONAL SPECIFIC END
+
+" cursors doesn't print letters
+set nocompatible
+" END PERSONAL SPECIFIC END """"""""""""""""""""""""
 
 " enable bold code in editor
 let g:enable_bold_font = 1
@@ -101,12 +102,12 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
 
-" saves file backups with "filename-date.vimbackup"
+" any time you save, a .vimbckp is created with the file on its previous state "filename-date.vimbckp"
 set directory=~/vimTemp,.
 set backupdir=~/vimTemp,.
 set backup
 set writebackup
-au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S") . '.vimbackup'
+au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S") . '.vimbckp'
 
 " load the buffer into chrome
 nmap, c :!open -a Google\ Chrome<cr>
@@ -117,29 +118,31 @@ map <silent> <PageDown> 9001<C-D>
 imap <silent> <PageUp> <C-O>9001<C-U>
 imap <silent> <PageDown> <C-O>9001<C-D>
 
-" general oneliners
+" START GENERAL ONELINERS START """"""""""""""""""""""""
 set encoding=utf-8
 set nocompatible                " don't need to be compatible with old vim
 set nu                          " show line numbers
-set showmode                    " always show what mode you're on
-set nowrap                      " don't wrap lines
 set showmatch                   " show bracket matches
-set ignorecase                  " ignore case in search
-set hlsearch                    " highlight all search matches
+set laststatus=2                " show status bar always
+set ruler                       " show row and column in footer
+set showmode                    " show what mode you're on always
+set scrolloff=2                 " minimum lines to show above/below cursor
+" set nowrap                    " don't wrap lines (but I prefer to)
+
 set cursorline                  " highlight current line
-set smartcase                   " pay attention to case when caps are used
+set hlsearch                    " highlight all search matches
+set ignorecase                  " ignore case in search
 set incsearch                   " show search results as I type
+set smartcase                   " pay attention to case when caps are used
+
 set ttimeoutlen=100             " decrease timeout for faster insert with 'O'
 set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set autowrite                   " save on buffer switch
-set ruler                       " show row and column in footer
-set scrolloff=2                 " minimum lines above/below cursor
-set laststatus=2                " always show status bar
+
 set clipboard=unnamed           " use the system clipboard
 set wildmenu                    " enable bash style tab completion
 set mouse=a                     " enable full mouse support
 set wildmode=list:longest,full
 runtime macros/matchit.vim      " use % to jump between start/end of methods
-
--qwindowgeometry 1920x100
+" END GENERAL ONELINERS END """"""""""""""""""""""""
