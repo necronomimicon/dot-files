@@ -1,3 +1,11 @@
+"To create your vimrc, start up Vim and do one of the following:
+":e $HOME/.vimrc  " on Unix, Mac or OS/2
+":e $HOME/_vimrc  " on Windows
+":e s:.vimrc      " on Amiga
+"Insert the settings you want, and save the file.
+"Note that exisitence of this file will disable the compatible option
+"https://stackoverflow.com/questions/10921441/where-is-my-vimrc-file
+
 " START PERSONAL SPECIFIC START """"""""""""""""""""""""
 " inverts up and down
 nnoremap j k
