@@ -53,8 +53,9 @@ endif
 " indents
 set smarttab
 set autoindent                  " autoindent always on
+set tabstop=4                   " a tab is 4-spaces width
 set shiftwidth=4                " number of spaces to use for auto-indent
-set tabstop=2                   " a tab is 2-spaces width
+set expandtab                   " converts tabs to spaces so file always displays the same everywhere
 set softtabstop=4               " <bs> pretend a <tab> is removed, even if not
 set copyindent                  " copy the previous indentation on autoindent
 
@@ -106,7 +107,7 @@ set laststatus=2                " show status bar always
 set ruler                       " show row and column in footer
 set showmode                    " show what mode you're on always
 set scrolloff=2                 " minimum lines to show above/below cursor
-" set nowrap                    " don't wrap lines (but I prefer to)
+set nowrap                      " don't wrap lines
 
 set cursorline                  " highlight current line
 set hlsearch                    " highlight all search matches
