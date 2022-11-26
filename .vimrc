@@ -82,7 +82,7 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 endif
 
-" any time you save, a .vimbckp is created with the file on its previous state "filename-date.vimbckp"
+" for every save, a .vimbckp is created without any changes "filename-date.vimbckp"
 set directory=~/vimTemp,.
 set backupdir=~/vimTemp,.
 set backup
