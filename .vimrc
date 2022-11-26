@@ -1,12 +1,12 @@
-"To create your vimrc, start up Vim and do one of the following:
-":e $HOME/.vimrc  " on Unix, Mac or OS/2
-":e $HOME/_vimrc  " on Windows
-":e s:.vimrc      " on Amiga
-"Insert the settings you want, and save the file.
-"Note that existence of this file will disable the compatible option
-"https://stackoverflow.com/questions/10921441/where-is-my-vimrc-file
+" To create your vimrc, start up Vim and do one of the following:
+" :e $HOME/.vimrc  " on Unix, Mac or OS/2
+" :e $HOME/_vimrc  " on Windows
+" :e s:.vimrc      " on Amiga
 
-" START PERSONAL SPECIFIC START """"""""""""""""""""""""
+" Note that existence of this file will disable the compatible option
+" https://stackoverflow.com/questions/10921441/where-is-my-vimrc-file
+
+" PERSONAL SPECIFICS START """"""""""""""""""""""""
 " inverts up and down
 nnoremap j k
 nnoremap k j
@@ -21,7 +21,7 @@ nnoremap R r
 
 " cursors doesn't print letters
 set nocompatible
-" END PERSONAL SPECIFIC END """"""""""""""""""""""""
+" PERSONAL SPECIFICS END """"""""""""""""""""""""
 
 " enable bold code in editor
 let g:enable_bold_font = 1
@@ -98,7 +98,7 @@ map <silent> <PageDown> 9001<C-D>
 imap <silent> <PageUp> <C-O>9001<C-U>
 imap <silent> <PageDown> <C-O>9001<C-D>
 
-" START GENERAL ONELINERS START """"""""""""""""""""""""
+" START GENERAL ONELINERS START """"""""
 set encoding=utf-8
 set nocompatible                " don't need to be compatible with old vim
 set nu                          " show line numbers
@@ -125,4 +125,4 @@ set wildmenu                    " enable bash style tab completion
 set mouse=a                     " enable full mouse support
 set wildmode=list:longest,full
 runtime macros/matchit.vim      " use % to jump between start/end of methods
-" END GENERAL ONELINERS END """"""""""""""""""""""""
+" END GENERAL ONELINERS END """"""""
