@@ -3,7 +3,7 @@
 ":e $HOME/_vimrc  " on Windows
 ":e s:.vimrc      " on Amiga
 "Insert the settings you want, and save the file.
-"Note that exisitence of this file will disable the compatible option
+"Note that existence of this file will disable the compatible option
 "https://stackoverflow.com/questions/10921441/where-is-my-vimrc-file
 
 " START PERSONAL SPECIFIC START """"""""""""""""""""""""
