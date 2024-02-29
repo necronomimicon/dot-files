@@ -27,6 +27,7 @@ set nocompatible
 let g:enable_bold_font = 1
 
 " set dark color scheme from defaults
+" colorscheme greeneer
 colorscheme desert
 
 " default window bigger
